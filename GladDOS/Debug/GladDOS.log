@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\classxis\fall2018\cs 161c+\gladdos\main.cpp(30): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  stdafx.cpp
+  GladDOS.vcxproj -> D:\classxis\fall2018\CS 161C+\GladDOS\Debug\GladDOS.exe

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1538083736 source:d:\classxis\fall2018\cs 161c+\cout\main.cpp
+	<cstdlib>
+	<fstream>
+	<iostream>
+	<time.h>
+
+1538089685 source:d:\classxis\fall2018\cs 161c+\cout\gladdos.rc
+

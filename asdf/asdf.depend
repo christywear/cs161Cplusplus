@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1538801518 source:d:\classxis\fall2018\cs 161c+\asdf\main.cpp
+	<iostream>
+	<windows.h>
+

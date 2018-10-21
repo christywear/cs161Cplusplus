@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1538802885 source:d:\classxis\fall2018\cs 161c+\ganger_christy_cis161_lab2\main.cpp
+	<iostream>
+	<ctime>
+	<iomanip>
+	<cstdlib>
+	<windows.h>
+

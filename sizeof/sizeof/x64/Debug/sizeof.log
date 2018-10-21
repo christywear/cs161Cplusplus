@@ -1,0 +1,2 @@
+﻿  sizeof.cpp
+d:\classxis\fall2018\cs 161c+\sizeof\sizeof\sizeof.cpp(12): error C4700: uninitialized local variable 'x' used

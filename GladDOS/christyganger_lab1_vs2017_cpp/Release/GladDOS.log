@@ -1,0 +1,7 @@
+﻿  main.cpp
+d:\classxis\fall2018\cs 161c+\gladdos\christyganger_lab1_vs2017_cpp\main.cpp(30): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  stdafx.cpp
+  Generating code
+  All 179 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  GladDOS.vcxproj -> D:\classxis\fall2018\CS 161C+\GladDOS\christyganger_lab1_vs2017_cpp\Release\GladDOS.exe

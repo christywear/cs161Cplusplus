@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1538750527 source:d:\classxis\fall2018\cs 161c+\inclass\ganger_christy_cis161_lab2\main.cpp
+	<iostream>
+	<ctime>
+	<iomanip>
+

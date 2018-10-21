@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1539290163 source:c:\users\student\desktop\adsf\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+

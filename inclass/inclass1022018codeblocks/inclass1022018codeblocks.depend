@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1538516673 source:d:\classxis\fall2018\cs 161c+\inclass\inclass1022018codeblocks\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+
