@@ -21,17 +21,24 @@ int main()
     while (!done)
     {
         /* Input, get user info */
-           while (user_in_number < 1 || user_in_number > INT_MAX)
+
+       while (user_in_number < 1 || user_in_number > INT_MAX)
+        {
+        std::cout << user_out_message << "\n";
+        std::cin >> user_in_number;
+            while(!std::cin)
             {
+
             std::cout << user_out_message << "\n";
             std::cin.clear();
             std::cin.ignore();
             std::cin >> user_in_number;
             }
+        }
 
 
         /* Processing, calculate factors, output */
-        std::cout << factor_out << user_in_number << " are:" << "\n";
+
 
         while (i <= user_in_number)
         {
@@ -53,6 +60,7 @@ int main()
 
             default:
                 user_in_number = 0;
+                i = 1;
                 break;
         }
 
