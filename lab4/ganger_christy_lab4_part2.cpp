@@ -16,10 +16,19 @@ int main()
     std::string out_user_largest = "Your largest number is: ";
     std::string out_countcheck = "This is how many numbers where entered so far: ";
     std::string out_error_input = "This number was either above 100 or below zero, please try again";
+    std::string input_error = "Bad input, please enter a number between 1 and 100, zero to exit";
     while (!done == true)
         {
             std::cout << user_intro << "\n";
             std::cin >> user_numbers;
+            while(!std::cin)
+            {
+
+                std::cin.clear();
+                std::cin.ignore();
+                std::cout << input_error << "\n";
+                std::cin >> user_numbers;
+            }
             while(user_numbers < 0 || user_numbers > 100)
             {
                 std::cout << out_error_input << "\n";
