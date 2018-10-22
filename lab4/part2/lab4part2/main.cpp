@@ -40,6 +40,9 @@ int main()
             if (user_numbers == 0)
             {
                 done = true;
+                std::cout << out_countcheck << countcheck << "\n";
+                std::cout << out_user_smallest << user_smallest << "\n";
+                std::cout << out_user_largest << user_largest << "\n";
                 continue;
             }
 
