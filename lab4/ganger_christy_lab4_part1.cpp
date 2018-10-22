@@ -24,6 +24,8 @@ int main()
            while (user_in_number < 1 || user_in_number > INT_MAX)
             {
             std::cout << user_out_message << "\n";
+            std::cin.clear();
+            std::cin.ignore();
             std::cin >> user_in_number;
             }
 
