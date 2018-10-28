@@ -1,3 +1,10 @@
+/*
+Author : Christy Ganger
+Class CS161C++
+Lab 5: Nim
+Date 10/28/2018
+*/
+
 #include <iostream>
 #include <string>
 #include <limits>
