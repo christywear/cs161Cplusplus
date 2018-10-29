@@ -23,6 +23,8 @@ const std::string switch_has_bad_input = "That's not valid input, please type Y 
 const std::string ask_play_again = "Would you like to play again? (Y/N)";
 const std::string thanks_play = "Thanks for playing!";
 const std::string screen_clear = "\n\n\n\n\n\n\n\n\n\n\n\n";
+const long BUFF_SIZE = std::numeric_limits<std::streamsize>::max();
+
 /* in game variables */
 std::string starting_marks = "";
 int current_number_of_sticks = 11;
@@ -89,7 +91,7 @@ int main()
                 if (std::cin.fail())
                 {
                         std::cin.clear();
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                        std::cin.ignore(BUFF_SIZE,'\n');
                         std::cout << outtro << "\n" << "\n";
                         continue;
                 }
