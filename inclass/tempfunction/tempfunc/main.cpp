@@ -14,11 +14,13 @@ date: 10/28/2018
 #include <string>
 #include <limits>
 
+/* functions */
 void get_type_of_convert_func();
 void get_and_check_temp_input();
 void do_math_conversion();
 void do_exit_switch();
 
+/* variables */
 std::string user_input_CorF;
 std::string F2C = "(C*9.0/8.0) +32.0";
 std::string C2F = "(F-32)* 5.0 / 90";
@@ -30,17 +32,24 @@ bool done = false;
 bool fix_do_loop = false;
 bool switch_drinks_please = false;
 
+/*constants */
 const long BUFF_SIZE = std::numeric_limits<std::streamsize>::max();
+const std::string query_input1 = "Would you like to convert C to F (please enter C2F)";
+const std::string query_input2 = "Or would you like to convert F to C (please enter F2C)";
+const std::string query_input_temp = "Thank you, Now please enter the degree's you wish to convert:";
+const std::string C2F_selected_out = "Celsius to fahrenheit selected";
+const std::string F2C_selected_out = "fahrenheit to Celsius selected";
+const std::string bad_input_out1 = "Bad input, please enter C2F or F2C ";
 
 int main()
 {
     while(!done)
     {
-        std::cout << "Would you like to convert C to F (please enter C2F)" << "\n";
-        std::cout << "Or would you like to convert F to C (please enter F2C)" << "\n";
+        std::cout << query_input1 << "\n";
+        std::cout << query_input2 << "\n";
         /*First validate input sequence*/
         get_type_of_convert_func();
-        std::cout << "Thank you, Now please enter the degree's you wish to convert:" << "\n";
+        std::cout << query_input_temp << "\n";
         get_and_check_temp_input();
         do_math_conversion();
         do_exit_switch();
@@ -60,20 +69,20 @@ void get_type_of_convert_func()
 
             if (user_input_CorF == "C2F")
             {
-                std::cout << "Celsius to fahrenheit selected" << "\n";
+                std::cout << C2F_selected_out << "\n";
                 fix_do_loop = true;
                 continue;
             }
             if (user_input_CorF == "F2C")
             {
-                std::cout << "fahrenheit to Celsius selected" << "\n";
+                std::cout << F2C_selected_out << "\n";
                 fix_do_loop = true;
                 continue;
             }
 
-                std::cout << "Bad input, please enter C2F or F2C " << "\n";
+                std::cout << bad_input_out1 << "\n";
                 std::cin.clear();
-                std::cin.ignore(BUFF_SIZE);
+                std::cin.ignore(BUFF_SIZE, '\n');
 
         }
         while (!fix_do_loop);
