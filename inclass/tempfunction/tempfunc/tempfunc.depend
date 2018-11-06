@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1541539999 source:c:\users\student\documents\github\cs161cplusplus\inclass\tempfunction\tempfunc\main.cpp
+	<iostream>
+	<string>
+	<limits>
+
