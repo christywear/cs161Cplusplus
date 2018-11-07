@@ -7,21 +7,28 @@ LAB : 7
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <limits>
 using namespace std;
 
+/*variables */
 char choice, compChoice;
-
+bool done = false;
 /*functions */
 void generate_random_assign(char &compChoice);
 void get_input_output_pc_choice(char, char &choice);
 void do_comparison_out_result(char, char);
+void play_again();
 
 int main()
 {
-        /*call functions*/
-        generate_random_assign(compChoice);
-        get_input_output_pc_choice(compChoice, choice);
-        do_comparison_out_result(compChoice, choice);
+        do
+        {
+            /*call functions*/
+            generate_random_assign(compChoice);
+            get_input_output_pc_choice(compChoice, choice);
+            do_comparison_out_result(compChoice, choice);
+            play_again();
+        }while(!done);
     return 0;
 }
 
@@ -36,11 +43,7 @@ void generate_random_assign(char &compChoice)
     do
     {
         compChoice = rand() % 4 + 80;
-    cout << compChoice << "\n";
-    int grr;
-    grr = compChoice;
-    cout << grr << "\n";
-    }while(compChoice ==81);
+     }while(compChoice ==81);
 }
 
 /* Prompts user to get input for choice,
@@ -48,10 +51,36 @@ and informs user of pc's guess
 */
 void get_input_output_pc_choice(char compChoice, char &choice)
 {
-    cout << "Enter your choice" << endl;
-    cout << "R for rock, P for paper, S for scissors: ";
-    cin >> choice;
-    cout << "Computer chose " << compChoice << endl;
+    bool check=false;
+    while(!check)
+    {
+        cout << "Enter your choice" << endl;
+        cout << "R for rock, P for paper, S for scissors: ";
+        cin >> choice;
+        if (islower(choice))
+        {
+            choice=toupper(choice);
+        }
+        if (choice > 80 && choice < 84)
+        {
+            if (choice == 81)
+            {
+                cin.clear();
+                cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+            }
+            else
+            {
+                check = true;
+                cout << "Computer chose " << compChoice << endl;
+            }
+        }
+        else
+        {
+            cout << "Invalid input" << "\n";
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        }
+    }
 }
 
 /* does the math comparison to see who won,
@@ -69,4 +98,35 @@ void do_comparison_out_result(char compChoice, char choice)
             cout << "Computer wins!" << endl;
         else
         cout << "Tie" << endl;
+}
+
+void play_again()
+{
+
+    char answer;
+    bool switch_done = false;
+    while(!switch_done)
+    {
+        cout << "would you like to play again? Y/N " << "\n";
+        cin >> answer;
+        switch(answer)
+        {
+        case 'N':
+        case 'n':
+            done = true;
+            switch_done = true;
+            break;
+
+        case 'Y':
+        case 'y':
+            cout << "here we go again!" << "\n\n\n\n";
+            switch_done = true;
+            break;
+
+        default:
+            cout << "Invalid input try again" << "\n";
+            break;
+
+        }
+    }
 }
