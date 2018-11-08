@@ -10,7 +10,7 @@ LAB : 7
 #include <ctime> /*time */
 #include <limits> /*clearing and ignoring bad input */
 #include "const_strings.h" /* all my constant & strings */
-#include "Variables.h" /*all variables */
+#include "Variables.h" /*all variables */ //global variables are BAD REDO!
 #include "my_functions.h" /* function prototypes , and functions*/
 
 int main()
