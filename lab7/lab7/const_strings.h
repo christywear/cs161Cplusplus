@@ -7,6 +7,7 @@ const std::string output_player_wins = "You win!";
 const std::string output_computer_wins = "Computer wins!";
 const std::string output_tie = "You have tied with the computer";
 const std::string output_computer_choice = "Computer chose ";
+const std::string output_user_choice = "You chose ";
 const std::string output_wrong_input = "Invalid input";
 const std::string output_play_again = "would you like to play again? Y/N ";
 const std::string output_yes_play_again = "here we go again!";

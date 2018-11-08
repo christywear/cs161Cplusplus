@@ -4,3 +4,19 @@
 	<cstdlib>
 	<ctime>
 
+1541711397 source:c:\users\student\documents\github\cs161cplusplus\lab7\lab7\main.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<ctime>
+	<limits>
+	"const_strings.h"
+	"Variables.h"
+	"my_functions.h"
+
+1541707572 c:\users\student\documents\github\cs161cplusplus\lab7\lab7\const_strings.h
+
+1541711397 c:\users\student\documents\github\cs161cplusplus\lab7\lab7\variables.h
+
+1541711473 c:\users\student\documents\github\cs161cplusplus\lab7\lab7\my_functions.h
+

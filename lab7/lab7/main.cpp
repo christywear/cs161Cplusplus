@@ -10,15 +10,19 @@ LAB : 7
 #include <ctime> /*time */
 #include <limits> /*clearing and ignoring bad input */
 #include "const_strings.h" /* all my constant & strings */
-#include "Variables.h" /*all variables */ //global variables are BAD REDO!
+
 #include "my_functions.h" /* function prototypes , and functions*/
 
 int main()
 {
+    bool done = false;
+    char choice, compChoice;
+    int winner = 0;
         do
         {
         /*call functions*/
 
+            displayInstructions();
             /*Generates a random number between 80 and 83
             Then takes the capital char values PQRS,
             Assigns to compChoice, And repeats loop if = to Q
@@ -29,15 +33,19 @@ int main()
             /* Prompts user to get input for choice,
             and informs user of pc's guess
             */
-            get_input_output_pc_choice(compChoice, choice);
+            choice = getMove();
 
             /* does the math comparison to see who won,
             and reports it back to user
             */
-            do_comparison_out_result(compChoice, choice);
+
+            getWinner(compChoice, choice);
+
+            /*output winner */
+            output_winner_func(winner, compChoice, choice);
 
             /* prompts user if they wish to play again, if so restarts program */
-            play_again();
+            done = playAgain();
         }while(!done);
     return 0;
 }

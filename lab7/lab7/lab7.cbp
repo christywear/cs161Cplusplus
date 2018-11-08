@@ -32,7 +32,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Variables.h" />
 		<Unit filename="const_strings.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="my_functions.h" />
