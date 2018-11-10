@@ -2,10 +2,25 @@
 #define MY_FUNCTIONS_H_INCLUDED
 
 /*functions prototypes */
+<<<<<<< HEAD
 void generate_random_assign(char &compChoice);
 void get_input_output_pc_choice(char, char &choice);
 void do_comparison_out_result(char, char);
 void play_again();
+=======
+void displayInstructions();
+void generate_random_assign(char &compChoice);
+char getMove();
+int do_comparison_out_result(char, char);
+bool playAgain();
+void output_winner_func(int);
+
+void displayInstructions()
+{
+    std::cout << output_string_prompt << "\n";
+    std::cout << output_string_prompt_1 << "\n";
+}
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
 
 /*Generates a random number between 80 and 83
 Then takes the capital char values PQRS,
@@ -24,6 +39,7 @@ void generate_random_assign(char &compChoice)
 /* Prompts user to get input for choice,
 and informs user of pc's guess
 */
+<<<<<<< HEAD
 void get_input_output_pc_choice(char compChoice, char &choice)
 {
     bool check=false;
@@ -38,6 +54,17 @@ void get_input_output_pc_choice(char compChoice, char &choice)
         */
         std::cin >> choice;
 
+=======
+char getMove()
+{
+    bool check=false;
+    char choice;
+    while(!check)
+    {
+        std::cout << output_string_prompt << "\n";
+        std::cout << output_string_prompt_1 << "\n";
+        std::cin >> choice;
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
         if (islower(choice))
         {
             choice=toupper(choice);
@@ -48,11 +75,20 @@ void get_input_output_pc_choice(char compChoice, char &choice)
             {
                 std::cin.clear();
                 std::cin.ignore(ignore_info,'\n');
+<<<<<<< HEAD
+=======
+                std::cout << output_string_prompt << "\n";
+                std::cout << output_string_prompt_1 << "\n";
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
             }
             else
             {
                 check = true;
+<<<<<<< HEAD
                 std::cout << output_computer_choice << compChoice << "\n";
+=======
+
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
             }
         }
         else
@@ -62,11 +98,16 @@ void get_input_output_pc_choice(char compChoice, char &choice)
             std::cin.ignore(ignore_info,'\n');
         }
     }
+<<<<<<< HEAD
+=======
+    return(choice);
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
 }
 
 /* does the math comparison to see who won,
 and reports it back to user
 */
+<<<<<<< HEAD
 void do_comparison_out_result(char compChoice, char choice)
 {
     if (choice == 82 && compChoice == 83)
@@ -86,6 +127,56 @@ void play_again()
 {
 
     char answer;
+=======
+int getWinner(char compChoice, char choice)
+{
+    int winner = 0;
+    if (choice == 82 && compChoice == 83)
+            winner = 1;
+
+        else if (choice == 83 && compChoice == 82)
+            winner = 2;
+
+        else if (choice > compChoice)
+            winner = 1;
+
+        else if (compChoice > choice)
+            winner = 2;
+
+        else
+            winner = 3;
+
+    return(winner);
+}
+
+/* Declares winner. */
+void output_winner_func(int winner, char compChoice, char choice)
+{
+    std::cout << output_computer_choice << compChoice << "\n";
+    std::cout << output_user_choice << choice << "\n";
+    switch(winner)
+    {
+    case 1:
+        std::cout << output_player_wins << "\n";
+        break;
+
+    case 2:
+        std::cout << output_computer_wins << "\n";
+        break;
+
+    case 3:
+        std::cout << output_tie << "\n";
+        break;
+    }
+}
+
+/* prompts user if they wish to play again, if so restarts program */
+bool playAgain()
+{
+
+    char answer;
+    bool temp_done = false;
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
     bool switch_done = false;
     while(!switch_done)
     {
@@ -95,7 +186,11 @@ void play_again()
         {
         case 'N':
         case 'n':
+<<<<<<< HEAD
             done = true;
+=======
+            temp_done = true;
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
             switch_done = true;
             break;
 
@@ -111,7 +206,15 @@ void play_again()
 
         }
     }
+<<<<<<< HEAD
 }
 
 
+=======
+    return(temp_done);
+}
+
+
+
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
 #endif // MY_FUNCTIONS_H_INCLUDED

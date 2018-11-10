@@ -32,7 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+<<<<<<< HEAD
 		<Unit filename="Variables.h" />
+=======
+>>>>>>> 7469f847d0c2e9a8e7c1facbee61e05dd5bbebd6
 		<Unit filename="const_strings.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="my_functions.h" />
