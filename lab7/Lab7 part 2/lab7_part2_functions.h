@@ -70,21 +70,26 @@ int getMove(int func_min_number, int func_max_number)
 bool Winnerplease(int func_userguess, int func_rand)
 {
     bool more_input = false;
+    static int counter = 1;
 
         if (func_userguess < func_rand)
             {
                 std::cout << out_user_guess_higher<< "\n";
+                counter++;
                 more_input = true;
             }
         if (func_userguess > func_rand)
             {
                 std::cout << out_user_guess_lower << "\n";
                 more_input = true;
+                counter++;
             }
         if (func_userguess == func_rand)
             {
                 std::cout << out_user_is_winner << "\n" ;
+                std::cout << out_count_number_1 << counter << out_count_number_2 << "\n";
                 more_input = false;
+                counter++;
             }
 
     return (more_input);

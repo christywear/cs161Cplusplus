@@ -47,16 +47,17 @@
     // Restart or Exit App
         const string restart_app = " Would you like to another one? (Y/N)";
 
-    // Define Variables
-        bool prog_reset = false;
-        bool prog_end = false;
+    // Exit Variables
         void exit_out();
         void invale_d();
-        char menu_choice;
+
 
 int main()
 {
-
+    // Define Variables
+        bool prog_reset = false;
+        bool prog_end = false;
+        char menu_choice;
 
     while (!prog_end)
 {

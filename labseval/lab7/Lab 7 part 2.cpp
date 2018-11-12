@@ -17,143 +17,223 @@ using namespace std;
  *
  */
 
-int ran_number;
-bool done = false;
+
+// Prototype Functions
+        void display_instructions();
+        int get_number();
+        void get_move(int rand_number_permenant_temp_getmove);
+        bool play_again();
+
+
+// Main program
+int main()
+{
+        int rand_number_permenant = 0;
+   do
+    {
+        // Get instructions
+            display_instructions();
+        // Get random number
+
+        // Get user number and compare against random number
+            get_move(get_number());
+        // Ask user if wanting to play again / close program
+   }while(play_again());
+    return 0;
+}
+
+
+ // Constraint Strings
+                // get_move Strings
+                const string welcome_intro = " Welcome to a game of Hi/Low. \n";
+                const string user_inform = " Please choose a number between 1 and 99. \n";
+                const string user_choice = " Your choice is: ";
+                const string wrong_entry = " Wrong input. Please, try again: \n";
+                const string user_low = " Your number is to low! \n";
+                const string user_high = " Your number is to high! \n";
+                const string user_win = " Congratulations, You picked the right number! \n";
+                const string counter_1 = " It took you ";
+                const string counter_2 = " tries to get the right answer! \n";
+                // play_again Strings
+                const string restart_app = " Would you like to start over?";
+                const string user_yn = " [y/n]: ";
+                const string thanks_playing = " Thanks for playing. \n";
+                const string error_entry = " That's not valid input, please type Y for yes, or N for no \n";
+                // General Strings
+                const string new_line = " \n ";
+
+
 //Intro no inputs, displays	the	instructions
 void display_instructions()
 {
                 // Intro
-                cout << " Welcome to a game of Hi/Low. \n" << endl;
-                cout << " Please choose a number between 1 and 99. \n" << endl;
+                cout << welcome_intro << endl;
+                cout << user_inform << endl;
 }
 
 // 	inputs	are	min	and	max, returns a random number between min and max
-void get_number()
+int get_number()
 {
+    int ran_number_temporary;
                 // Computers pick
 
                 // srand wants an unsigned integer, time returns something else
                 srand(static_cast<unsigned>(time(0)));
                 // get a random number between 1 and 99
-                ran_number = rand() % 99 + 1;
-                //return ran_number;
+                ran_number_temporary = rand() % 99 + 1;
+                return ran_number_temporary;
 }
 
 //	inputs	are	min	and	max, gets, validates, returns an integer from the user that	is between min and max
-void get_move()
+void get_move(int rand_number_permenant_temp_getmove)
 {
                 // User choice
                 int user_number;
+                // Counter
                 int counter = 0;
-                //get_number();
-                //get_number = ran_number;
 
-                    cout << " Your choice is: ";
+                    cout << user_choice;
                     cin >> user_number ;
-                    cout << " \n ";
+                    cout << new_line;
                 while (!cin)
             {
-                    cout << "Wrong input. Please, try again: \n";
+                    cout << wrong_entry;
                 //clear input buffer
                     cin.clear();
                     cin.ignore();
-                    cout << " Your choice is: ";
+                    cout << user_choice;
                     cin >> user_number;
-                    cout << " \n ";
+                    cout << new_line;
             }
                  while ( user_number < 1 || user_number > 99)
             {
-                    cout << " \n" << " Wrong input. Please, try again: \n";
+                    cout << new_line << wrong_entry;
                 //clear input buffer
                     cin.clear();
                     cin.ignore();
 
-                    cout << " Your choice is: ";
+                    cout << user_choice;
                     cin >> user_number;
-                    cout << " \n ";
+                    cout << new_line;
             }
                 // User high/low or win
                     counter++;
-                while (user_number < ran_number)
+        while(user_number != rand_number_permenant_temp_getmove)
+        {
+                if (user_number < rand_number_permenant_temp_getmove)
             {
-                    cout << " Your number is to low! \n" << endl;
-                    cout << " Your choice is: ";
+                    cout << user_low << endl;
+                    cout << user_choice;
                     cin >> user_number;
-                    cout << " \n ";
+                    cout << new_line;
+                    while (!cin)
+            {
+                    cout << wrong_entry;
+                //clear input buffer
+                    cin.clear();
+                    cin.ignore();
+                    cout << user_choice;
+                    cin >> user_number;
+                    cout << new_line;
+            }
+                 while ( user_number < 1 || user_number > 99)
+            {
+                    cout << new_line << wrong_entry;
+                //clear input buffer
+                    cin.clear();
+                    cin.ignore();
+
+                    cout << user_choice;
+                    cin >> user_number;
+                    cout << new_line;
+            }
                     counter++;
             }
-                while (user_number > ran_number)
+                else if (user_number > rand_number_permenant_temp_getmove)
             {
-                    cout << " Your number is to high! \n" << endl;
-                    cout << " Your choice is: ";
+                    cout << user_high << endl;
+                    cout << user_choice;
                     cin >> user_number;
-                    cout << " \n ";
+                    cout << new_line;
+                    while (!cin)
+            {
+                    cout << wrong_entry;
+                //clear input buffer
+                    cin.clear();
+                    cin.ignore();
+                    cout << user_choice;
+                    cin >> user_number;
+                    cout << new_line;
+            }
+                 while ( user_number < 1 || user_number > 99)
+            {
+                    cout << new_line << wrong_entry;
+                //clear input buffer
+                    cin.clear();
+                    cin.ignore();
+
+                    cout << user_choice;
+                    cin >> user_number;
+                    cout << new_line;
+            }
                     counter++;
             }
-                if (user_number == ran_number)
+
+        }
+                if (user_number == rand_number_permenant_temp_getmove)
             {
-                    cout << " Congratulations, You picked the right number! \n" << endl;
-                    cout << " It took you " << counter << " tries to get the right answer! \n";
-                    cout << " \n ";
+                    cout << user_win << endl;
+                    cout << counter_1 << counter << counter_2;
+                    cout << new_line;
+
             }
+
+
+
 
 
 }
 // no inputs, return true if the user wants	to go again, false if they do not
-char play_again()
+bool play_again()
 {
+    bool done = false;
     char start_over;
     bool prog_end = true;
                 // Restart or Exit App
                     // ask user to start over
                     while (prog_end)
                     {
-                                cout << " Would you like to start over?" << endl;
-                                cout << " [y/n]: ";
+                                cout << restart_app << endl;
+                                cout << user_yn;
                                 cin >> start_over;
-                                cout << " \n " << endl;
+                                cout << new_line << endl;
                     switch (start_over)
                         {
                         case 'n':
                         case 'N':
-                                cout << " Thanks for playing. \n" << endl;
+                                cout << thanks_playing << endl;
                             // exit switch loop
-                            done = true;
+                            done = false;
                             prog_end = false;
-                            //return done;
+
                             break;
                         case 'Y':
                         case 'y':
                             // exit switch loop
                                 prog_end = false;
+                                done = true;
                             break;
 
                         default:
-                                cout << " That's not valid input, please type Y for yes, or N for no \n" << "\n";
+                                cout << error_entry << new_line;
 
                             break;
                             }
 
 
                     }
+                    return done;
 }
 
 
-int main()
-{
-int rand_number;
-   do
-   {
-    // Get instructions
-    display_instructions();
-    // Get random number
-    get_number();
-    ran_number;
-    // Get user number and compare against random number
-    get_move();
-    // Ask user if wanting to play again
-    play_again();
 
-   }while(!done);
-    return 0;
-}

@@ -10,6 +10,8 @@ const std::string out_valid_num_error = "Please enter A valid number between 1 a
 const std::string out_user_guess_higher = "Ohh almost!, Try guessing higher!";
 const std::string out_user_guess_lower = "Woops! too high, try guessing lower.";
 const std::string out_user_is_winner = "Congo rats! So cool ! you won!";
+const std::string out_count_number_1 = "It took you ";
+const std::string out_count_number_2 = " guesses.";
 const std::string out_user_play_again = "would you like to play again? (Y/N)";
 const std::string out_bad_input = "Invalid input";
 #endif // LAB7_PART2_CONST_H_INCLUDED
