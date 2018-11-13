@@ -16,7 +16,8 @@ float user_rectangle(float user_rectangle_length, float user_rectangle_width);
 float user_triangle(float user_triangle_height, float user_triangle_width);
 void user_error();
 void user_error_leave();
-void reset_all_the_things();
+void check_for_cinfail();
+void reset_all_the_things(float &user_circle_radius,float &user_square_side,float &user_rectangle_length,float &user_rectangle_width,float &user_triangle_height,float &user_triangle_width,float &user_circle_area,float &user_square_area,float &user_rectangle_area,float &user_triangle_area,bool &done);
 
 /*const strings for the program */
 const std::string intro_out1 = "Hello! we have four shapes in stock! Would you like:";
@@ -41,6 +42,10 @@ const std::string switch_exit_out = "Would you like to make another shape? (Y)es
 const float PI = 3.1416;
 
 /* variables */
+
+int main()
+{
+    /* variables */
 char another_shape;
 char user_defined_shape;
 float user_circle_radius = 0.0;
@@ -56,8 +61,6 @@ float user_triangle_area = 0.0;
 bool done = false;
 bool exit_no_more_shapes = false;
 
-int main()
-{
     do
     {
         while(!done)
@@ -70,6 +73,7 @@ int main()
             std::cout << intro_out1 << "\n";
             std::cout << intro_out_for_input << "\n";
             std::cin >> user_defined_shape;
+            check_for_cinfail();
             switch(user_defined_shape)
             {
             case 'c':
@@ -78,6 +82,7 @@ int main()
                 std::cout << user_circle_out << "\n";
                 std::cout << user_circle_out_for_input << "\n";
                 std::cin >> user_circle_radius;
+                check_for_cinfail();
                 std::cout << user_circle_area_out << user_circle(user_circle_radius) << "\n";
                 done = true;
                 break;
@@ -88,6 +93,7 @@ int main()
                 std::cout << user_square_out << "\n";
                 std::cout << user_square_out_for_input << "\n";
                 std::cin >> user_square_side;
+                check_for_cinfail();
                 std::cout << user_square_area_out << user_square(user_square_side) << "\n";
                 done = true;
                 break;
@@ -98,8 +104,10 @@ int main()
                 std::cout << user_rectangle_out << "\n";
                 std::cout << user_rectangle_out_for_input << "\n";
                 std::cin >> user_rectangle_length;
+                check_for_cinfail();
                 std::cout << user_rectangle_out_for_input2 << "\n";
                 std::cin >> user_rectangle_width;
+                check_for_cinfail();
                 std::cout << user_rectangle_area_out << user_rectangle(user_rectangle_length, user_rectangle_width) << "\n";
                 done = true;
                 break;
@@ -110,14 +118,17 @@ int main()
                 std::cout << user_triangle_out << "\n";
                 std::cout << user_triangle_out_for_input << "\n";
                 std::cin >> user_triangle_height;
+                 check_for_cinfail();
                 std::cout << user_triangle_out_for_input2 << "\n";
                 std::cin >> user_triangle_width;
+                 check_for_cinfail();
                 std::cout << user_triangle_area_out << user_triangle(user_triangle_height, user_triangle_width) << "\n";
                 done = true;
                 break;
 
             default:
                 user_error();
+                check_for_cinfail();
                 break;
             }
         }
@@ -126,21 +137,23 @@ int main()
       /* the switch to get out of the gate n exit the game or make new one */
       std::cout << switch_exit_out << "\n";
       std::cin >> another_shape;
+       check_for_cinfail();
       switch(another_shape)
       {
           case 'y':
           case 'Y':
-            reset_all_the_things();
+            reset_all_the_things(user_circle_radius, user_square_side, user_rectangle_length, user_rectangle_width, user_triangle_height, user_triangle_width, user_circle_area, user_square_area, user_rectangle_area, user_triangle_area, done);
             break;
 
           case 'n':
           case 'N':
-            reset_all_the_things();
+            reset_all_the_things(user_circle_radius, user_square_side, user_rectangle_length, user_rectangle_width, user_triangle_height, user_triangle_width, user_circle_area, user_square_area, user_rectangle_area, user_triangle_area, done);
             exit_no_more_shapes=true;
             break;
 
           default:
             user_error_leave();
+            check_for_cinfail();
             break;
        }
     }while (!exit_no_more_shapes);
@@ -148,6 +161,18 @@ int main()
 }
 
 /* Function city, all extra functions live here */
+
+    /*checks for cinfail, corrects returns */
+void check_for_cinfail()
+{
+    if (!std::cin)
+            {
+                std::cin.fail();
+                std::cin.clear();
+                std::cin.ignore(1000,'\n');
+            }
+    return;
+}
 
     /* circle function: For a circle, get the radius (area=radius*radius*PI) */
 float user_circle(float user_circle_radius)
@@ -191,7 +216,7 @@ void user_error_leave()
 }
 
     /* Reset function, to clear old settings and values to prevent problems*/
-void reset_all_the_things()
+void reset_all_the_things(float &user_circle_radius,float &user_square_side,float &user_rectangle_length,float &user_rectangle_width,float &user_triangle_height,float &user_triangle_width,float &user_circle_area,float &user_square_area,float &user_rectangle_area,float &user_triangle_area,bool &done)
 {
     user_circle_radius = 0.0;
     user_square_side = 0.0;
@@ -204,5 +229,5 @@ void reset_all_the_things()
     user_rectangle_area = 0.0;
     user_triangle_area = 0.0;
     done = false;
-
+return;
 }
