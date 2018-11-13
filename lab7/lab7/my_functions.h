@@ -2,7 +2,6 @@
 #define MY_FUNCTIONS_H_INCLUDED
 
 /*functions prototypes */
-<<<<<<< HEAD
 void generate_random_assign(char &compChoice);
 void get_input_output_pc_choice(char, char &choice);
 void do_comparison_out_result(char, char);
