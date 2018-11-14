@@ -33,22 +33,15 @@ int main()
             and informs user of pc's guess
             */
 
-            get_input_output_pc_choice(compChoice, choice);
-
             choice = getMove();
 
 
             /* does the math comparison to see who won,
-            and reports it back to user
+            and assigns it to winner
             */
 
-            do_comparison_out_result(compChoice, choice);
+            winner = do_comparison_out_result(compChoice, choice);
 
-            /* prompts user if they wish to play again, if so restarts program */
-            play_again();
-
-
-            getWinner(compChoice, choice);
 
             /*output winner */
             output_winner_func(winner, compChoice, choice);

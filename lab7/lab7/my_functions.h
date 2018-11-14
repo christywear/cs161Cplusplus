@@ -3,13 +3,11 @@
 
 /*functions prototypes */
 void generate_random_assign(char &compChoice);
-void get_input_output_pc_choice(char, char &choice);
-void do_comparison_out_result(char, char);
+int do_comparison_out_result(char, char);
 void play_again();
 void displayInstructions();
 void generate_random_assign(char &compChoice);
 char getMove();
-int do_comparison_out_result(char, char);
 bool playAgain();
 void output_winner_func(int);
 
@@ -38,20 +36,6 @@ void generate_random_assign(char &compChoice)
 and informs user of pc's guess
 */
 
-void get_input_output_pc_choice(char compChoice, char &choice)
-{
-    bool check=false;
-    while(!check)
-    {
-       /* display instructions */
-        std::cout << output_string_prompt << "\n";
-        std::cout << output_string_prompt_1 << "\n";
-       /*display instructions */
-
-        /*modify to get input, validate,   return lower case r , p, s
-        */
-        std::cin >> choice;
-
 
 char getMove()
 {
@@ -59,8 +43,6 @@ char getMove()
     char choice;
     while(!check)
     {
-        std::cout << output_string_prompt << "\n";
-        std::cout << output_string_prompt_1 << "\n";
         std::cin >> choice;
 
         if (islower(choice))
@@ -81,7 +63,7 @@ char getMove()
             {
                 check = true;
 
-                std::cout << output_computer_choice << compChoice << "\n";
+                std::cout << output_computer_choice << choice << "\n";
 
             }
         }
@@ -101,46 +83,33 @@ char getMove()
 and reports it back to user
 */
 
-void do_comparison_out_result(char compChoice, char choice)
+int do_comparison_out_result(char compChoice, char choice)
 {
+   int winner = 0;
     if (choice == 82 && compChoice == 83)
-            std::cout << output_player_wins << "\n";
+
+        winner = 1;
         else if (choice == 83 && compChoice == 82)
-            std::cout << output_computer_wins << "\n";
-        else if (choice > compChoice)
-            std::cout << output_player_wins << "\n";
-        else if (compChoice > choice)
-            std::cout << output_computer_wins << "\n";
-        else
-        std::cout << output_tie << "\n";
-}
+        winner = 2;
 
-/* prompts user if they wish to play again, if so restarts program */
-void play_again()
-{
+        else if (choice == 80 && compChoice == 82)
+        winner = 1;
 
-    char answer;
+        else if (compChoice == 80 && choice == 82)
+        winner = 2;
 
-int getWinner(char compChoice, char choice)
-{
-    int winner = 0;
-    if (choice == 82 && compChoice == 83)
-            winner = 1;
+        else if (compChoice == 80 && choice == 83)
+        winner = 1;
 
-        else if (choice == 83 && compChoice == 82)
-            winner = 2;
-
-        else if (choice > compChoice)
-            winner = 1;
-
-        else if (compChoice > choice)
-            winner = 2;
+        else if (compChoice == 83 && choice == 80)
+        winner = 2;
 
         else
-            winner = 3;
+        winner = 3;
 
-    return(winner);
+        return winner;
 }
+
 
 /* Declares winner. */
 void output_winner_func(int winner, char compChoice, char choice)
@@ -178,7 +147,7 @@ bool playAgain()
         {
         case 'N':
         case 'n':
-            done = true;
+
             temp_done = true;
             switch_done = true;
             break;

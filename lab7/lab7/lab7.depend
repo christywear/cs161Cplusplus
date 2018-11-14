@@ -1,8 +1,12 @@
 # depslib dependency file v1.0
-1541554585 source:d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab7\lab7\main.cpp
+1542188748 source:d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab7\lab7\main.cpp
 	<iostream>
+	<string>
 	<cstdlib>
 	<ctime>
+	<limits>
+	"const_strings.h"
+	"my_functions.h"
 
 1541711397 source:c:\users\student\documents\github\cs161cplusplus\lab7\lab7\main.cpp
 	<iostream>
@@ -19,4 +23,8 @@
 1541711397 c:\users\student\documents\github\cs161cplusplus\lab7\lab7\variables.h
 
 1541711473 c:\users\student\documents\github\cs161cplusplus\lab7\lab7\my_functions.h
+
+1541975990 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab7\lab7\const_strings.h
+
+1542189475 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab7\lab7\my_functions.h
 

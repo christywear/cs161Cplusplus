@@ -34,9 +34,11 @@ int main()
         // Get instructions
             display_instructions();
         // Get random number
-
+            get_number();
+            rand_number_permenant = get_number();
+            cout << rand_number_permenant;
         // Get user number and compare against random number
-            get_move(get_number());
+            get_move(rand_number_permenant);
         // Ask user if wanting to play again / close program
    }while(play_again());
     return 0;
@@ -100,7 +102,7 @@ void get_move(int rand_number_permenant_temp_getmove)
                     cout << wrong_entry;
                 //clear input buffer
                     cin.clear();
-                    cin.ignore();
+                    cin.ignore(1000, '\n');
                     cout << user_choice;
                     cin >> user_number;
                     cout << new_line;
@@ -110,7 +112,7 @@ void get_move(int rand_number_permenant_temp_getmove)
                     cout << new_line << wrong_entry;
                 //clear input buffer
                     cin.clear();
-                    cin.ignore();
+                    cin.ignore(1000, '\n');
 
                     cout << user_choice;
                     cin >> user_number;
