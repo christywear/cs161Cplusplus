@@ -28,11 +28,11 @@ int scoreThreeOfAKind(int ones, int twos, int threes, int fours, int fives, int 
     int sum;
     if (ones == 3)
     {
-        sum = ones * 3;
+        sum = ones * 1;
     }
     if (twos == 3)
     {
-        sum = twos * 3;
+        sum = twos * 2;
     }
     if (threes == 3)
     {
@@ -40,15 +40,15 @@ int scoreThreeOfAKind(int ones, int twos, int threes, int fours, int fives, int 
     }
     if (fours == 3)
     {
-        sum = fours * 3;
+        sum = fours * 4;
     }
     if (fives == 3)
     {
-        sum = fives * 3;
+        sum = fives * 5;
     }
     if (sixes == 3)
     {
-        sum = sixes * 3;
+        sum = sixes * 6;
     }
     return sum;
 }

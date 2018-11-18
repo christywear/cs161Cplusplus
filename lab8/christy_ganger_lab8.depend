@@ -17,3 +17,15 @@
 
 1542339047 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\inclass\11152018\christy_ganger_prelimary_lab8\yahtzee.h
 
+1542339187 source:d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab8\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<iomanip>
+	"yahtzee.h"
+
+1542339047 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab8\yahtzee.h
+
+1542339047 source:d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab8\yahtzee.cpp
+	"yahtzee.h"
+

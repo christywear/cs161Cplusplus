@@ -1,5 +1,5 @@
-#ifndef YATZEE_H_INCLUDED
-#define YATZEE_H_INCLUDED
+#ifndef YAHTZEE_H_INCLUDED
+#define YAHTZEE_H_INCLUDED
 int scoreOnes(int ones, int twos, int threes, int fours, int fives, int sixes);
 int scoreTwos(int ones, int twos, int threes, int fours, int fives, int sixes);
 int scoreThrees(int ones, int twos, int threes, int fours, int fives, int sixes);
@@ -16,4 +16,4 @@ int scoreChance(int ones, int twos, int threes, int fours, int fives, int sixes)
 
 
 
-#endif // YATZEE_H_INCLUDED
+#endif // YAHTZEE_H_INCLUDED
