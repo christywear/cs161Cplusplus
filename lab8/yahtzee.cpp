@@ -1,3 +1,9 @@
+/* this portion of code written by christy ganger
+lab 8
+11/19/2018
+version 27
+*/
+
 #include "yahtzee.h"
 int scoreOnes(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
@@ -84,45 +90,33 @@ int scoreFourOfAKind(int ones, int twos, int threes, int fours, int fives, int s
 int scoreFullHouse(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
     int sum;
-    if (ones == 2 && twos == 3)
+    if (ones == 3 && twos == 2 || threes == 2 || fours == 2 || fives == 2 || sixes == 2)
+    {
+         sum = 25;
+    }
+    if (twos == 3 && ones == 2 || threes == 2 || fours == 2 || fives == 2 || sixes == 2)
     {
         sum = 25;
     }
-    if (ones == 3 && twos == 2)
+    if (threes == 3 && ones == 2 || twos == 2 || fours == 2 || fives == 2 || sixes == 2)
     {
-        sum = 25;
+         sum = 25;
     }
-    if (twos == 2 && threes == 3)
+    if (fours == 3 && ones == 2 || twos == 2 || threes == 2 || fives == 2 || sixes == 2)
     {
-        sum = 25;
+         sum = 25;
     }
-    if (twos == 3 && threes == 2)
+    if (fives == 3 && ones == 2 || twos == 2 || threes == 2 || fours == 2 || sixes == 2)
     {
-        sum = 25;
+         sum = 25;
     }
-    if (threes == 2 && fours == 3)
+    if (sixes == 3 && ones == 2 || twos == 2 || threes == 2 || fours == 2 || fives == 2)
     {
-        sum = 25;
+         sum = 25;
     }
-    if (threes == 3 && fours == 2)
+    if (fours == 3 && twos == 2 || threes == 2 || ones == 2 || fives == 2 || sixes == 2)
     {
-        sum = 25;
-    }
-    if (fours == 2 && fives == 3)
-    {
-        sum = 25;
-    }
-    if (fours == 3 && fives == 2)
-    {
-        sum = 25;
-    }
-    if (fives == 2 && sixes == 3)
-    {
-        sum = 25;
-    }
-    if (fours == 3 && fives == 2)
-    {
-        sum = 25;
+         sum = 25;
     }
     return sum;
 }
@@ -166,7 +160,7 @@ int scoreYahtzee(int ones, int twos, int threes, int fours, int fives, int sixes
 int scoreChance(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
     int sum;
-    sum = ones + twos + threes + fours + fives + sixes;
+    sum = ones *1 + twos * 2 + threes * 3 + fours * 4 + fives * 5 + sixes * 6;
     return sum;
 }
 

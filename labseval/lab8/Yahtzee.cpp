@@ -26,7 +26,7 @@ void printSeparator();
 void printScore(int onesScore, int twosScore, int threesScore, int foursScore,
 	int fivesScore, int sixesScore, int threeOfAKind,
 	int fourOfAKind, int fullHouse, int smallStraight,
-	int largeStraight, int yahtzee, int chance);
+	int largeStraight, int yahtzee, int chance, int die1, int die2, int die3, int die4, int die5);
 void printScoreLine(string name, int score);
 int getScoreOption(int onesScore, int twosScore, int threesScore, int foursScore,
 	int fivesScore, int sixesScore, int threeOfAKind,
@@ -73,6 +73,58 @@ int main()
 	int largeStraight;
 	int yahtzee;
 	int chance;
+
+// Splash Screen
+
+    cout << endl << endl << endl << endl << endl << endl << endl << endl;
+
+    cout << endl << "                                        +------------------------------------------+";
+
+    cout << endl << "                                         |  __    __    _     _                   |";
+
+    cout << endl << "                                         |  \\ \\  / /   | |   | |                  |";
+
+    cout << endl << "                                         |   \\ \\V /__ _| |__ | |_ _______  ___    |";
+
+    cout << endl << "                                         |    \\  /   ` | '_ \\| __|_  / _ \\/ _ \\   |";
+
+    cout << endl << "                                         |    | | (_|  | | | | |_ / /  __/  __/   |";
+
+    cout << endl << "                                         |    \\_/\\__,_ |_| |_|\\__/___\\___|\\___|   |";
+
+    cout << endl << "                                         |                                        |";
+
+    cout << endl << "                                         |                                        |";
+
+    cout << endl << "                                        +------------------------------------------+";
+
+    cout << endl << endl;
+    cout << endl << "                                                            Loading" << endl;
+        Sleep(1000);
+            cout << "                                                          *";
+        Sleep(1200);
+            cout << "*";
+        Sleep(1000);
+            cout << "*";
+        Sleep(1100);
+            cout << "*";
+        Sleep(500);
+            cout << "*";
+        Sleep(500);
+            cout << "*";
+        Sleep(1000);
+            cout << "*";
+        Sleep(1500);
+            cout << "*";
+        Sleep(2000);
+            cout << "*";
+        Sleep(2500);
+            cout << "*";
+        Sleep(3000);
+            cout << "*";
+        Sleep(4000);
+        cout << string( 100, '\n' );
+
 
 	onesScore = twosScore = threesScore = foursScore = fivesScore = sixesScore = EMPTY;
 	threeOfAKind = fourOfAKind = fullHouse = smallStraight = largeStraight = yahtzee = chance = EMPTY;
@@ -136,9 +188,9 @@ int main()
 
 
 		printScore(onesScore, twosScore, threesScore, foursScore, fivesScore, sixesScore,
-			threeOfAKind, fourOfAKind, fullHouse, smallStraight, largeStraight, yahtzee, chance);
+			threeOfAKind, fourOfAKind, fullHouse, smallStraight, largeStraight, yahtzee, chance, die1, die2, die3, die4, die5);
 
-        printRoll(die1, die2, die3, die4, die5);
+
 		int scoreOption = getScoreOption(onesScore, twosScore, threesScore, foursScore,
 			fivesScore, sixesScore, threeOfAKind,
 			fourOfAKind, fullHouse, smallStraight,
@@ -187,8 +239,16 @@ int main()
 			case CHANCE:
 				chance = scoreChance(ones, twos, threes, fours, fives, sixes);
 				break;
-		}
 
+		int scoreOption = getScoreOption(onesScore, twosScore, threesScore, foursScore,
+			fivesScore, sixesScore, threeOfAKind,
+			fourOfAKind, fullHouse, smallStraight,
+			largeStraight, yahtzee, chance);
+
+
+		}
+        printScore(onesScore, twosScore, threesScore, foursScore, fivesScore, sixesScore,
+			threeOfAKind, fourOfAKind, fullHouse, smallStraight, largeStraight, yahtzee, chance, die1, die2, die3, die4, die5);
 	}
 }
 
@@ -254,7 +314,7 @@ bool askReroll(int n)
 void printScore(int onesScore, int twosScore, int threesScore, int foursScore,
 	int fivesScore, int sixesScore, int threeOfAKind,
 	int fourOfAKind, int fullHouse, int smallStraight,
-	int largeStraight, int yahtzee, int chance)
+	int largeStraight, int yahtzee, int chance, int die1, int die2, int die3, int die4, int die5)
 
 {
     cout << "                               " << " Here are the categories: " << "                "  << endl;
@@ -298,8 +358,11 @@ void printScore(int onesScore, int twosScore, int threesScore, int foursScore,
 	printScoreLine("Chance", chance);
 	cout << "13. Chance" << endl;
 	printSeparator();
-	cout << "                               " << " How would you like to score this? ";
+	cout << "                               "<< "Your roll is: "<< die1 << " " << die2 << " " << die3 << " " << die4 << " " << die5
+        << " How would you like to score this? ";
+
 }
+
 
 /********************************
  *
@@ -414,6 +477,7 @@ int getScoreOption(int onesScore, int twosScore, int threesScore, int foursScore
 	} while (!valid);
 
 	return ans;
+
 }
 
 /********************************
@@ -461,7 +525,7 @@ int scoreSixes(int ones, int twos, int threes, int fours, int fives, int sixes)
 }
 int scoreThreeOfAKind(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if (ones >= 3)
     {
         sum = ones * 1;
@@ -491,7 +555,7 @@ int scoreThreeOfAKind(int ones, int twos, int threes, int fours, int fives, int 
 
 int scoreFourOfAKind(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if (ones >= 4)
     {
         sum = ones * 1;
@@ -521,7 +585,7 @@ int scoreFourOfAKind(int ones, int twos, int threes, int fours, int fives, int s
 
 int scoreFullHouse(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
 
         if (ones == 3 && twos == 2 || threes == 2 || fours == 2 || fives == 2 || sixes == 2)
     {
@@ -570,7 +634,7 @@ int scoreSmallStraight(int ones, int twos, int threes, int fours, int fives, int
 }
 int scoreLargeStraight(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if ( ones >= 1 && twos >= 1 && threes >= 1 && fours >= 1 && fives >=1)
     {
         sum = 40;
@@ -584,7 +648,7 @@ int scoreLargeStraight(int ones, int twos, int threes, int fours, int fives, int
 }
 int scoreYahtzee(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if (ones == 5 || twos == 5 || threes == 5 || fours == 5 || fives==5 || sixes ==5)
         {
             sum = 50;
@@ -594,7 +658,7 @@ int scoreYahtzee(int ones, int twos, int threes, int fours, int fives, int sixes
 }
 int scoreChance(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     sum = ones * 1 + twos * 2 + threes * 3 + fours * 4 + fives * 5 + sixes * 6;
 
     return sum;
