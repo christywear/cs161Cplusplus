@@ -31,7 +31,7 @@ int scoreSixes(int ones, int twos, int threes, int fours, int fives, int sixes)
 }
 int scoreThreeOfAKind(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if (ones == 3)
     {
         sum = ones * 1;
@@ -60,7 +60,7 @@ int scoreThreeOfAKind(int ones, int twos, int threes, int fours, int fives, int 
 }
 int scoreFourOfAKind(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if (ones == 4)
     {
         sum = ones * 4;
@@ -89,7 +89,7 @@ int scoreFourOfAKind(int ones, int twos, int threes, int fours, int fives, int s
 }
 int scoreFullHouse(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if (ones == 3 && twos == 2 || threes == 2 || fours == 2 || fives == 2 || sixes == 2)
     {
          sum = 25;
@@ -118,10 +118,14 @@ int scoreFullHouse(int ones, int twos, int threes, int fours, int fives, int six
     {
          sum = 25;
     }
+    if (ones == 5 || twos == 5 || threes == 5 || fours == 5 || fives==5 ||sixes ==5)
+     {
+         sum = 25;
+     }
     return sum;
 }
 int scoreSmallStraight(int ones, int twos, int threes, int fours, int fives, int sixes)
-{   int sum;
+{   int sum = 0;
     if ( ones >= 1 && twos >= 1 && threes >= 1 && fours >= 1)
     {
         sum = 30;
@@ -139,7 +143,7 @@ int scoreSmallStraight(int ones, int twos, int threes, int fours, int fives, int
 }
 int scoreLargeStraight(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if ( ones >= 1 && twos >= 1 && threes >= 1 && fours >= 1 && fives >=1)
     {
         sum = 40;
@@ -152,14 +156,14 @@ int scoreLargeStraight(int ones, int twos, int threes, int fours, int fives, int
 }
 int scoreYahtzee(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     if (ones == 5 || twos == 5 || threes == 5 || fours == 5 || fives==5 ||sixes ==5)
         sum = 50;
     return sum;
 }
 int scoreChance(int ones, int twos, int threes, int fours, int fives, int sixes)
 {
-    int sum;
+    int sum = 0;
     sum = ones *1 + twos * 2 + threes * 3 + fours * 4 + fives * 5 + sixes * 6;
     return sum;
 }

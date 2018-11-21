@@ -1,0 +1,185 @@
+Find two syntax errors in the following program:
+
+#include <iostream>
+
+using namespace std;
+
+int area(int length, int width = 0);
+
+int main()
+{
+    int length, width;
+
+        // for rectangle use both arguments
+    cout << "Enter length and width of a rectangle" << endl;
+    cin >> length >> width;
+
+    cout << "The area is " << area(length, width) << endl;
+
+      // for square, only need first argument
+    cout << "Enter side of a square" << endl;
+    cin >> length;
+
+    cout << "The area is " << area(length) << endl;
+
+    return 0;
+}
+
+int area(int length, int width = 0);
+{
+    if ( width == 0 )
+        return length * length;
+
+    return length * width;
+}
+
+//Find two syntax errors in the following program:
+
+#include <iostream>
+
+using namespace std;
+
+int area(int length, int width = 0);
+
+int main()
+{
+int length, width;
+
+// for rectangle use both arguments
+cout << "Enter length and width of a rectangle" << endl;
+cin >> length >> width;
+
+cout << "The area is " << area(length, width) << endl;
+
+// for square, only need first argument
+cout << "Enter side of a square" << endl;
+cin >> length;
+
+cout << "The area is " << area(length) << endl;
+
+return 0;
+}
+
+int area(int length, int width) // had a ; and default in wrong place
+{
+if ( width == 0 )
+return length * length;
+
+return length * width;
+}
+
+Question 3
+Complete
+Scored out of 10.00
+Not flaggedFlag question
+Question text
+Find the errors in the following program. You must use pass by reference.
+
+#include <iostream>
+
+using namespace std;
+
+void area2(int area, int length, int width = 0);
+
+int main()
+{
+    int length, width, area;
+
+      // for rectangle use two arguments
+    cout << "Enter length and width of a rectangle" << endl;
+    cin >> length >> width;
+
+    cout << "The area is " << area2(area, length, width) << endl;
+
+      // for squares use one argument
+    cout << "Enter side of a square" << endl;
+    cin >> length;
+
+    cout << "The area is " << area2(area, length) << endl;
+
+    return 0;
+}
+
+void area2(int area, int length, int width)
+{
+    if ( width == 0 )
+        area = length * length;
+    else
+        area = length * width;
+}
+
+/Find the errors in the following program. You must use pass by reference.
+
+#include <iostream>
+
+using namespace std;
+
+void area2(int area, int length , int width = 0);
+
+int main()
+{
+int length, width, area , sum;
+
+// for rectangle use two arguments
+cout << "Enter length and width of a rectangle" << endl;
+cin >> length >> width;
+cout << "The area is " << area2(area, length, width) << endl;
+
+// for squares use one argument
+cout << "Enter side of a square" << endl;
+cin >> length;
+
+cout << "The area is " << area2(area, length) << "\n";
+
+return 0;
+}
+
+void area2(int &area, int length, int width)
+{
+if ( width == 0 )
+area = length * length;
+else
+area = length * width;
+}
+
+Question 4
+Complete
+Scored out of 10.00
+Not flaggedFlag question
+Question text
+Write a simple program with functions that calculates the perimeter and area of a square.
+
+You will need two functions:
+
+Get an integer from the user and return it to the main program (no validation required)
+Calculate the area and perimeter of the square and return both to the main program (the length of a side is passed in as a parameter)
+Main will call the first function and pass its value to the second function.  It will then call the second function, save the results, and display them with using a cout statement.
+
+Your second function should not do any I/O.  Just get a number from main, calculate the results, and return them.
+
+#include <iostream>
+
+using namespace std;
+
+void square_info(int length, int square_peri, int square_area);
+
+int main()
+{
+int length, square_peri = 0, square_area = 0;
+
+
+cout << "Lets calculate the perimeter and area of a square" << "\n";
+cout << "please enter the size of a side" << "\n";
+cin >> length;
+square_info(length, square_area, square_peri);
+cout << "the perm is " << square_peri << " the area is " << square_area << "\n";
+
+return 0;
+}
+
+void square_info(int length, int &square_peri, int &square_area)
+{
+square_peri = length * 4;
+square_area = length * 2;
+return;
+}
