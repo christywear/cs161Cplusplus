@@ -93,7 +93,7 @@ void drawRect(char out_char, int rows, int columns)
         cout << "\n";
 
     }
-
+cout << "\n\n\n";
 return;
 }
 
@@ -117,26 +117,8 @@ void draw_triangle(char out_char, int rows, int columns)
         cout << "\n";
 
 }
-    /*cout << "Hey look a triangle" << "\n";
-    int triangle_width = rows;
-    int grr = rows;
-    for (int counter = 1; counter <= columns; counter++)
-    {
 
-
-
-        for (int counter = 1; counter <= rows; counter++)
-       {
-
-
-            cout << setw(triangle_width) << out_char;
-
-       }
-
-
-        cout << "\n";
-        triangle_width++;
-        */
+    cout << "\n\n\n";
 return;
 }
 
@@ -153,54 +135,45 @@ void draw_square(char out_char, int rows, int columns)
         cout << "\n";
 
     }
+    cout << "\n\n\n";
 return;
 }
 
 void draw_diamond(char out_char, int rows, int columns)
-{
-    int out_counter = 0;
-    for(int main_counter = 1; main_counter <= rows; main_counter++)
-    {
-        out_counter = 0;
-        for(int space_count = 1; space_count <= rows-main_counter; space_count++)
-        {
-            cout << "  ";
-        }
+{ /* code retrieved and modified from
+    http://www.codebind.com/cpp-tutorial/cpp-program-to-print-diamond-of-stars/
+    */
+  int c, k, space = 1;
+    space = rows - 1;
 
-        while(out_counter != 2*main_counter-1)
-        {
-            cout << out_char << " ";
-            out_counter++;
-        }
-        cout << "\n";
-    }
+  for (k = 1; k<=rows; k++)
+  {
+    for (c = 1; c<=space; c++)
+      cout<<" ";
 
-    for(int counter = rows; counter > 0; counter --)
-    {
+    space--;
 
+    for (c = 1; c<= 2*k-1; c++)
+      cout<<"*";
 
-        for(int counter2 = rows-counter; counter2 != 0; counter2--)
-        {
-            cout << "  ";
-        }
+    cout<<"\n";
+  }
 
+  space = 1;
 
-        for(int counter3 = rows+1; counter3 > 0;counter3--)
-        {
-            cout << out_char << " ";
+  for (k = 1; k<= rows - 1; k++)
+  {
+    for (c = 1; c<= space; c++)
+      cout<<" ";
 
+    space++;
 
-        }
-        for(int counter2 = rows-counter; counter2 != 0; counter2--)
-        {
-            cout << "  ";
-        }
+    for (c = 1 ; c<= 2*(rows-k)-1; c++)
+      cout<<"*";
 
-        cout << "\n";
-        rows --;
-    }
-
-    cout << "hey look a diamond!" << "\n";
+    cout<<"\n";
+  }
+    cout << "\n\n\n";
     return;
 }
 
