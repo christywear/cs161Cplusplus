@@ -1,0 +1,71 @@
+/*
+        ofstream outfile;
+        outfile.open("output.txt", ios::app);
+        cout << "To draw a (T)riangle Press T, and press Enter." << "\n";
+        cout << "To draw a (S)quare Press S, and press Enter." << "\n";
+        cout << "To draw a (R)ectangle Press R, and press enter." << "\n";
+        cout << "To draw a (D)iamond Press D, and press enter." << "\n";
+        cout << "please enter a letter Code for what you'd like to display" << "\n";
+        while (!done)
+        {
+        cin >> value;
+        if (cin.fail())
+        {
+            cin.ignore(1000, '\n');
+            cin.clear();
+        }
+
+        outfile << value;
+        outfile << "\n";
+        done = true;
+        }
+        outfile.close();*/
+// doing file stream
+  /*
+        inFile.open("hello.txt");
+
+        int num;
+       */
+// first case
+/*        cout << "loading first run to end of file listing numbers" << "\n";
+        while (!(inFile.eof()))
+        {
+            inFile >> num;
+            cout << num << "\n";
+        }
+       inFile.close();
+*/
+// second case
+ /*       cout << "loading numbers directly num in while loop" << "\n";
+        inFile.open("hello.txt");
+        while (inFile >> num)
+        {
+            cout << num << "\n";
+        }
+        inFile.close();
+*/
+// third case
+ /*       cout << "adding all" << "\n";
+        inFile.open("hello.txt");
+        int total = 0;
+        while(inFile >> num)
+        {
+            total += num;
+        }
+        inFile.close();
+        cout << total << "\n";
+*/
+// fourth case
+ /*       cout << "doing the average" << "\n";
+        inFile.open("hello.txt");
+        total = 0;
+        int counter = 0;
+        while (inFile >> num)
+        {
+            total += num;
+            counter++;
+        }
+        double average = static_cast<double>(total)/counter;
+        cout << average << "\n";
+*/
+// end file stream stuff test and learn
