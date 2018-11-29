@@ -5,10 +5,11 @@
 	"functions.h"
 	"constants.h"
 
-1543352441 source:c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\main.cpp
+1543522303 source:c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\main.cpp
+	<string>
 	<iostream>
-	<iomanip>
-	<fstream>
+	"functions.h"
+	"constants.h"
 
 1543456547 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\christy_ganger_lab9_fileio\functions.h
 
@@ -19,4 +20,17 @@
 	<fstream>
 	<string>
 	"functions.h"
+
+1543522186 c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\functions.h
+
+1543522490 c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\constants.h
+
+1543526521 source:c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\functions.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<sstream>
+	<iomanip>
+	"functions.h"
+	"constants.h"
 

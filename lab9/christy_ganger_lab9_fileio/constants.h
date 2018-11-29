@@ -1,11 +1,11 @@
 #ifndef CONSTANTS_H_INCLUDED
 #define CONSTANTS_H_INCLUDED
 /***********************************************************************/
-/*  This is where all the long strings live, for each function.        */
-/*  left for easy edits. left, as constant to make easier to reference */
-/*  at a glance, easily editable.                                      */
-/*  format :                                                           */
-/*  example:  const std:string func_name = "your string goes here";    */
+//  This is where all the long strings live, for each function.        //
+//  left for easy edits. left, as constant to make easier to reference //
+//  at a glance, easily editable.                                      //
+//  format :                                                           //
+//  example:  const std:string func_name = "your string goes here";    //
 /***********************************************************************/
 const std::string intro_1 = "Enter your character, row and column values";
 const std::string intro_2 = "Retrieving data, please wait..";
