@@ -2,10 +2,10 @@
 #define FUNCTIONS_H_INCLUDED
 
 /***********************************************************************/
-/*  This is where all the prototype of the functions lives here        */
-/*                                                                     */
-/*  format :                                                           */
-/*  example:  type func_name(input_type inputname);                    */                               */
+//  This is where all the prototype of the functions lives here        //
+//                                                                     //
+//  format :                                                           //
+//  example:  type func_name(input_type inputname);                    //                               */
 /***********************************************************************/
 void introstuff();
 std::string getinput();

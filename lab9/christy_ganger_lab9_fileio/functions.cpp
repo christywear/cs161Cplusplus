@@ -7,7 +7,7 @@
 #include "constants.h" // all constants go here, string text for user
 
 /***********************************************************************/
-/*  Introducing the program to the user, gracefully leading into input */
+//  Introducing the program to the user, gracefully leading into input //
 /***********************************************************************/
 void introstuff()
 {
@@ -20,8 +20,8 @@ return;
 
 
 /***********************************************************************/
-/*  This function gets input from the user, stores it in whereto read  */
-/*    from Then returns it to main.                                    */
+//  This function gets input from the user, stores it in whereto read  //
+//    from Then returns it to main.                                    //
 /***********************************************************************/
 std::string getinput()
 {
@@ -42,8 +42,8 @@ return wheretoreadfrom;
 }
 
 /***********************************************************************/
-/*  This function clears the main variables used between each while    */
-/*  loop, during "processinputfile" function                           */
+//  This function clears the main variables used between each while    //
+//  loop, during "processinputfile" function                           //
 /***********************************************************************/
 void clearallthethings(char& code, char& value, std::string& tempfix, std::string& grrr, int& rows, int& columns)
 {
@@ -57,11 +57,11 @@ void clearallthethings(char& code, char& value, std::string& tempfix, std::strin
 }
 
 /***********************************************************************/
-/*  This function reads the input file given by user, then feeds       */
-/*  the string "grrr" as if it's an array assigning proper position of */
-/*  single digit number, or character to a variable, which will be     */
-/*  passed to the individual functions and writes them to the output   */
-/*  file, closing and returning to main.                               */
+//  This function reads the input file given by user, then feeds       //
+//  the string "grrr" as if it's an array assigning proper position of //
+//  single digit number, or character to a variable, which will be     //
+//  passed to the individual functions and writes them to the output   //
+//  file, closing and returning to main.                               //
 /***********************************************************************/
 void processinputfile(std::string wheretoreadfrom)
 {
@@ -72,26 +72,32 @@ void processinputfile(std::string wheretoreadfrom)
     std::string tempfix;
     std::ifstream inFile;
     std::ofstream outFile;
-    inFile.open(wheretoreadfrom.c_str(), std::ios::binary);
+    inFile.open(wheretoreadfrom.c_str());
     if ( !inFile.good() )
         {
 		std::cout << proc_input_file_1 << "\n";
         }
-        outFile.open("output.dat", std::ios::binary);
+        outFile.open("output.dat");
     if ( !outFile.good() )
         {
 		std::cout << proc_input_file_2 << "\n";
         }
 
-    while (getline(inFile, grrr))
-        {
-        code = grrr[0];
-        value = grrr[2];
-        tempfix = grrr[4];
-        std::istringstream(tempfix) >> rows;
-        tempfix = grrr[6];
-        std::istringstream(tempfix) >> columns;
-        std::cout << "proc_input_file_3" << code << " " << value << " " << rows << " " << columns << "\n";
+       while (! inFile.eof())
+       {
+
+                inFile >> code;
+
+                inFile >> value;
+
+                inFile >> rows;
+
+                if (code == 'R')
+                {
+                    inFile >> columns;
+                }
+
+        std::cout << proc_input_file_3 << code << " " << value << " " << rows << " " << columns << "\n";
         switch (code)
             {
             case 'R':
@@ -134,13 +140,13 @@ return;
 }
 
 /***********************************************************************/
-/*  This function takes the passed by value of out_char which is       */
-/*  assigned a symbol, character or number by input file. the row and  */
-/*  column are used to determine the size of each functions shape.     */
-/*  As example :drawRect(& 3 2) &&                                     */
-/*                              &&                                     */
-/*                              &&                                     */
-/*                                                                     */
+//  This function takes the passed by value of out_char which is       //
+//  assigned a symbol, character or number by input file. the row and  //
+//  column are used to determine the size of each functions shape.     //
+//  As example :drawRect(& 3 2) &&                                     //
+//                              &&                                     //
+//                              &&                                     //
+//                                                                     //
 /***********************************************************************/
 std::string drawRect(char out_char, int rows, int columns)
 {
@@ -161,13 +167,13 @@ return rect;
 }
 
 /***********************************************************************/
-/*  This function takes the passed by value of out_char which is       */
-/*  assigned a symbol, character or number by input file. the row and  */
-/*  column are used to determine the size of each functions shape.     */
-/*  As example :drawRect(& 3 2) &&                                     */
-/*                              &&                                     */
-/*                              &&                                     */
-/*                                                                     */
+//  This function takes the passed by value of out_char which is       //
+//  assigned a symbol, character or number by input file. the row and  //
+//  column are used to determine the size of each functions shape.     //
+//  As example :drawRect(& 3 2) &&                                     //
+//                              &&                                     //
+//                              &&                                     //
+//                                                                     //
 /***********************************************************************/
 std::string draw_triangle(char out_char, int rows, int columns)
 {
@@ -197,13 +203,13 @@ return triangle;
 }
 
 /***********************************************************************/
-/*  This function takes the passed by value of out_char which is       */
-/*  assigned a symbol, character or number by input file. the row and  */
-/*  column are used to determine the size of each functions shape.     */
-/*  As example :drawRect(& 3 2) &&                                     */
-/*                              &&                                     */
-/*                              &&                                     */
-/*                                                                     */
+//  This function takes the passed by value of out_char which is       //
+//  assigned a symbol, character or number by input file. the row and  //
+//  column are used to determine the size of each functions shape.     //
+//  As example :drawRect(& 3 2) &&                                     //
+//                              &&                                     //
+//                              &&                                     //
+//                                                                     //
 /***********************************************************************/
 std::string draw_square(char out_char, int rows, int columns)
 {
@@ -224,13 +230,13 @@ return square;
 }
 
 /***********************************************************************/
-/*  This function takes the passed by value of out_char which is       */
-/*  assigned a symbol, character or number by input file. the row and  */
-/*  column are used to determine the size of each functions shape.     */
-/*  As example :drawRect(& 3 2) &&                                     */
-/*                              &&                                     */
-/*                              &&                                     */
-/*                                                                     */
+//  This function takes the passed by value of out_char which is       //
+//  assigned a symbol, character or number by input file. the row and  //
+//  column are used to determine the size of each functions shape.     //
+//  As example :drawRect(& 3 2) &&                                     //
+//                              &&                                     //
+//                              &&                                     //
+//                                                                     //
 /***********************************************************************/
 std::string draw_diamond(char out_char, int rows, int columns)
 { /* code retrieved and modified from
@@ -272,9 +278,9 @@ std::string draw_diamond(char out_char, int rows, int columns)
 }
 
 /***********************************************************************/
-/*  This function is extra, asks if the user would like to see what    */
-/*  got printed out to the file, by printing it on the screen.         */
-/*                                                                     */
+//  This function is extra, asks if the user would like to see what    //
+//  got printed out to the file, by printing it on the screen.         //
+//                                                                     //
 /***********************************************************************/
 void printout()
 {
@@ -322,9 +328,9 @@ return;
 }
 
 /***********************************************************************/
-/*  This function is extra, asks if the user would like to see start   */
-/*  the program over and read another file                             */
-/*                                                                     */
+//  This function is extra, asks if the user would like to see start   //
+//  the program over and read another file                             //
+//                                                                     //
 /***********************************************************************/
 bool playagain()
 {
