@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1543456604 source:d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\christy_ganger_lab9_fileio\main.cpp
+	<string>
+	<iostream>
+	"functions.h"
+	"constants.h"
+
+1543522303 source:c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\main.cpp
+	<string>
+	<iostream>
+	"functions.h"
+	"constants.h"
+
+1543456547 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\christy_ganger_lab9_fileio\functions.h
+
+1543457652 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\christy_ganger_lab9_fileio\constants.h
+
+1543455129 source:d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\christy_ganger_lab9_fileio\functions.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"functions.h"
+
+1543522186 c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\functions.h
+
+1543522490 c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\constants.h
+
+1543526521 source:c:\users\student\documents\github\cs161cplusplus\lab9\christy_ganger_lab9_fileio\functions.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<sstream>
+	<iomanip>
+	"functions.h"
+	"constants.h"
+
+1543526746 source:d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\functions.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<sstream>
+	<iomanip>
+	"functions.h"
+	"constants.h"
+
+1543522188 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\functions.h
+
+1543522492 d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\constants.h
+
+1543522304 source:d:\classxis\classes_github\school_classes\fall2018\cs 161c+\cs161cplusplus\lab9\main.cpp
+	<string>
+	<iostream>
+	"functions.h"
+	"constants.h"
+

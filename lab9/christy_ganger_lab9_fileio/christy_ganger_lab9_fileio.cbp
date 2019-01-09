@@ -35,6 +35,7 @@
 		<Unit filename="constants.h" />
 		<Unit filename="functions.cpp" />
 		<Unit filename="functions.h" />
+		<Unit filename="infile.dat" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
